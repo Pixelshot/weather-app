@@ -1,0 +1,24 @@
+
+Geocoding Challenge:
+  ✔ Getting to know mapbox API @done(20-07-22 18:29)
+    ✔ Fire off a new request to the URL explored in browser @done(20-07-22 14:49)
+    ✔ Have the request module parse it as JSON @done(20-07-22 14:49)
+    ✔ Print both the latitude and longtitude to the terminal @done(20-07-22 14:49)
+    ✔ Test work @done(20-07-22 14:49)
+
+  ✔ Handle errors for geocoding request @done(20-07-23 15:30)
+    ✔ Setup an error handler for low-level errors @done(20-07-22 18:34)
+    ✔ Setup error handling for no matching results @done(20-07-23 15:30)
+    ✔ Test by disabling network request and running the app @done(20-07-22 18:34)
+    ✔ Test by altering the search term and running the app @done(20-07-23 15:30)
+
+
+Forecast Challenge:
+  ✔ Goal: Create a reusable function for getting the forecast @done(20-07-23 15:29)
+
+  ✔ 1. Setup the 'forecast' function in utils/forecast.js @done(20-07-23 15:29)
+  ✔ 2. Require that function in app.js and call it as shown below @done(20-07-23 15:29)
+  ✔ 3. The forecast function should have three potential calls to callback: @done(20-07-23 15:29)
+        - Low level error, pass string for error @done(20-07-23 15:29)
+        - Coordinate error, pass string for error @done(20-07-23 15:30)
+        ✔ Success, pass forecast string for data(same format as before) @done(20-07-23 15:30)
