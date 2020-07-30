@@ -1,22 +1,23 @@
-const request = require('postman-request');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 
-// const url =
-//   'http://api.weatherstack.com/current?access_key=bcace1629cf7d9dcc7e8a266921f0a23&query=Selangor';
+const address = process.argv[2];
 
-// request({ url: url, json: true }, (error, response) => {
-//   const temp = response.body.current.temperature;
-//   const feelslike = response.body.current.feelslike;
+if (!address) {
+  return console.log('Please enter a valid address');
+}
 
-//   console.log(`It is currently ${temp}°C. It feels like ${feelslike}°C`);
-// });
+geocode(address, (error, { latitude, longitude, location }) => {
+  if (error) {
+    return console.log(error);
+  }
 
-// geocode('Kuala Lumpur', (error, data) => {
-//   console.log('Error', error);
-//   console.log('data', data);
-// });
+  forecast(latitude, longitude, (response, error) => {
+    if (error) {
+      return console.log(error);
+    }
 
-forecast(101.62, 3.15, (response, error) => {
-  error ? console.log(error) : console.log(`${response}`);
+    console.log(location);
+    console.log(response);
+  });
 });
